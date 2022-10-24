@@ -2,8 +2,7 @@
   "name": "universal-web-vj-kit",
   "version": "1.0.0",
   "scripts": {
-    "dev": "cross-env PROJECT_ENV=local nuxt",
-    "prd": "cross-env PROJECT_ENV=production nuxt",
+    "dev": "cross-env PROJECT_ENV=production nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
