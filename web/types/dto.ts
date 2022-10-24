@@ -1,3 +1,7 @@
+export interface MidiControls {
+  controls: Map<number, number>
+}
+
 export enum ButtonStyle {
   FILL_DISABLED = 'fillDisabled',
   FILL_WHITE = 'fillWhite',

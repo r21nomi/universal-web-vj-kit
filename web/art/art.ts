@@ -4,6 +4,7 @@ import OrbitControls from 'three-orbitcontrols'
 import vertexShader from '~/art/shader/vertexShader.vert'
 // @ts-ignore
 import fragmentShader from '~/art/shader/fragmentShader.frag'
+import { MidiControls } from '~/types/dto'
 
 export const Art = function () {
   const clock = new THREE.Clock()
@@ -22,7 +23,15 @@ export const Art = function () {
   const uniforms = {
     // Second
     time: { type: 'f', value: 1.0 },
+    offset: { type: 'f', value: 1.0 },
     resolution: { type: 'v2', value: new THREE.Vector2() },
+  }
+
+  // @ts-ignore
+  this.updateNoteNumber = (note: number, controls: MidiControls) => {
+    if (note === 0) {
+      uniforms.offset.value = controls.controls.get(0) || 0
+    }
   }
 
   const getWindowSize = () => {

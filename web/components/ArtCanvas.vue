@@ -3,8 +3,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 import { Art } from '~/art/art'
+import { MidiControls } from '~/types/dto'
 
 @Component({
   components: {},
@@ -12,8 +13,34 @@ import { Art } from '~/art/art'
 export default class ArtCanvas extends Vue {
   private art: any = null
 
+  @Watch('$store.state.midiController.currentNoteNumber')
+  private onCurrentNoteNumberChanged() {
+    if (this.art) {
+      this.updateNoteNumber()
+    }
+  }
+
+  @Watch('$store.state.midiController.noteAndControls')
+  private onNoteAndControlsChanged() {
+    this.updateNoteNumber()
+  }
+
   mounted() {
     this.art = new Art()
+  }
+
+  private updateNoteNumber() {
+    if (this.art) {
+      this.art.updateNoteNumber(this.currentNote, this.controls)
+    }
+  }
+
+  private get currentNote(): number {
+    return this.$store.state.midiController.currentNoteNumber
+  }
+
+  private get controls(): MidiControls {
+    return this.$store.getters['midiController/currentMidiControls']()
   }
 }
 </script>

@@ -915,6 +915,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.17.9":
+  version "7.19.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
+  integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz#8d126c8701fde4d66b264b3eba3d96f07666d155"
@@ -1791,6 +1798,11 @@
   integrity sha512-O3MmRAk6ZuAKa9CHgg0Pr0+lUOqoMLpc9AS4R8ano2auvsg7IE8syF3Xh/NPr26TWklxYcqoEEFdzLLs1fV9PQ==
   dependencies:
     source-map "^0.6.1"
+
+"@types/webmidi@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@types/webmidi/-/webmidi-2.0.6.tgz#c9b1428bbc5d5f49cc6201eae0dc5e2b3fd23e0e"
+  integrity sha512-sfS0A5IryqmBrUpcGPipEPeFdpqmZzP6b6lZFxHKgz5n2Vhzh4yJ5P2TvoDUhDjqJyv0Y25ng0Qodgo2Vu08ug==
 
 "@types/webpack-bundle-analyzer@3.9.3":
   version "3.9.3"
@@ -3711,6 +3723,13 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+djipevents@^2.0.5:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/djipevents/-/djipevents-2.0.6.tgz#9da598d1f59659d3f13d94dcdbd76f92545a23de"
+  integrity sha512-2vS7/OVdqocBAIVPbxhk36swE4HnjUL1muoibrkoaCaEAEAF/ww8QbYm55PqlzMp51pvD01wHr/CkZmKZdrI/g==
+  dependencies:
+    "@babel/runtime" "^7.17.9"
+
 doctrine@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
@@ -5537,6 +5556,11 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
+jazz-midi@^1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/jazz-midi/-/jazz-midi-1.7.6.tgz#6bd3a9cb6dce0109271252c8c682ac04184c4018"
+  integrity sha512-vKCmBpotb1y+kEbRlu43COar2LzV46uOTTzyM/zTx5LR7WUTWle7FFC8rphqBVdryW66QtOyUA2N/DWZToBang==
+
 jest-worker@^26.5.0:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
@@ -5640,6 +5664,14 @@ jsonfile@^6.0.1:
     universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
+
+jzz@^1.4.5:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/jzz/-/jzz-1.5.2.tgz#1fdc0a08e1c4cc10341d4f554a640bd0b994c1c2"
+  integrity sha512-58V274YyqaFavqI0FXcx2JCO4X8bSPuvwxlF8t2i+xlaWXSSenhExNzRkn/ubixdc0JNfsLV3+UX/baMw539ww==
+  dependencies:
+    "@types/webmidi" "^2.0.6"
+    jazz-midi "^1.7.6"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -9444,6 +9476,15 @@ webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
   integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
+
+webmidi@^3.0.21:
+  version "3.0.21"
+  resolved "https://registry.yarnpkg.com/webmidi/-/webmidi-3.0.21.tgz#a1faf28618779146c941eb559a4e1822408cb6a5"
+  integrity sha512-SStCLo099908jR0duYUTstVHNlKh9A/WvXIF5ED2ShGnE2MAy28UhrdzgjLsyDzOiBn8Od3ngT8g/MVa2TC5hg==
+  dependencies:
+    djipevents "^2.0.5"
+  optionalDependencies:
+    jzz "^1.4.5"
 
 webpack-bundle-analyzer@^4.4.1:
   version "4.5.0"

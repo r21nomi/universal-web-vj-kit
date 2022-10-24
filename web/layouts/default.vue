@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nuxt />
+    <MidiController />
     <ConfigModal v-if="showConfigModal" />
   </div>
 </template>
@@ -8,10 +9,12 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import ConfigModal from '~/components/ConfigModal.vue'
+import MidiController from '~/components/MidiController.vue'
 
 @Component({
   components: {
     ConfigModal,
+    MidiController,
   },
 })
 export default class extends Vue {
