@@ -3,7 +3,9 @@ import OrbitControls from 'three-orbitcontrols'
 // @ts-ignore
 import vertexShader from '~/art/shader/vertexShader.vert'
 // @ts-ignore
-import fragmentShader from '~/art/shader/fragmentShader.frag'
+import fragmentShader1 from '~/art/shader/fragmentShader1.frag'
+// @ts-ignore
+import fragmentShader2 from '~/art/shader/fragmentShader2.frag'
 import { MidiControls } from '~/types/dto'
 
 export const Art = function () {
@@ -14,6 +16,7 @@ export const Art = function () {
   const SHADER_QUALITY = 0.5
 
   let geometry, mesh
+  let material
   const vertices: number[] = []
   const uvs: number[] = []
   const indices: number[] = []
@@ -29,8 +32,19 @@ export const Art = function () {
 
   // @ts-ignore
   this.updateNoteNumber = (note: number, controls: MidiControls) => {
-    if (note === 0) {
-      uniforms.offset.value = controls.controls.get(0) || 0
+    switch (note) {
+      case 0: {
+        uniforms.offset.value = controls.controls.get(0) || 0
+        material.fragmentShader = fragmentShader1
+        material.needsUpdate = true
+        break
+      }
+      case 1: {
+        uniforms.offset.value = controls.controls.get(0) || 0
+        material.fragmentShader = fragmentShader2
+        material.needsUpdate = true
+        break
+      }
     }
   }
 
@@ -148,10 +162,10 @@ export const Art = function () {
       new THREE.Float32BufferAttribute(paddings, 2)
     )
 
-    const material = new THREE.RawShaderMaterial({
+    material = new THREE.RawShaderMaterial({
       uniforms,
       vertexShader,
-      fragmentShader,
+      fragmentShader: fragmentShader1,
       transparent: true,
       blending: THREE.NormalBlending,
       depthTest: true,
