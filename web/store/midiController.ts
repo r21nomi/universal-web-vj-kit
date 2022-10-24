@@ -1,10 +1,12 @@
 import { MidiControllerState } from '~/types/state'
 import { MidiControls } from '~/types/dto'
 
-const NOTE_NUM = 64
-const FIRST_NOTE_NUMBER = 0
-const CONTROL_NUM = 9
-const FIRST_CONTROL_NUMBER = 48
+const NOTE_NUM = parseInt(process.env.NOTE_NUM as string)
+const FIRST_NOTE_NUMBER = parseInt(process.env.FIRST_NOTE_NUMBER as string)
+const CONTROL_NUM = parseInt(process.env.CONTROL_NUM as string)
+const FIRST_CONTROL_NUMBER = parseInt(
+  process.env.FIRST_CONTROL_NUMBER as string
+)
 
 export const state = (): MidiControllerState => ({
   currentNoteNumber: 0,

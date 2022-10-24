@@ -1,13 +1,4 @@
-import { ENV_DEV } from './configs/env.development'
 import { ENV_PRD } from './configs/env.production'
-const environment = process.env.PROJECT_ENV || 'development'
-// require() cannot find file on vercel...
-const ENV =
-  environment === 'local'
-    ? require(`./configs/env.local.ts`).ENV_LOCAL
-    : environment === 'development'
-    ? ENV_DEV
-    : ENV_PRD
 
 export default {
   // ssr: true,
@@ -77,5 +68,5 @@ export default {
       }
     },
   },
-  env: ENV,
+  env: ENV_PRD,
 }

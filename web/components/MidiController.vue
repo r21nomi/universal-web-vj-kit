@@ -24,7 +24,9 @@ export default class MidiController extends Vue {
         console.log(output.manufacturer, output.name)
       )
 
-      const myInput = WebMidi.getInputByName('APC MINI')
+      const myInput = WebMidi.getInputByName(
+        process.env.MIDI_CONTROLLER_NAME as string
+      )
       myInput.addListener('noteon', (e) => {
         // 0 ~ 63
         // 64 ~ 71
